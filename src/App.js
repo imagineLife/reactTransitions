@@ -1,16 +1,30 @@
-import React from "react";
-import { render } from "react-dom";
+import React from 'react';
+import {
+    BrowserRouter as Router,
+    Route,
+    Redirect,
+    Switch
+} from 'react-router-dom';
+import ToDo from './Components/ToDo/';
+import TwoBars from './Components/TwoBars';
+import ToolBar from './Components/ToolBar';
+import SingleEmail from './Components/SingleEmail/single-email';
+import EmailList from './Components/EmailList/email-list';
+import './main.css';
 
-class App extends React.Component {
-
-  render() {
+export default function Email() {
     return (
-      <React.Fragment>
-        <h2>Begin!</h2>
-        <p>Test hot-reloading</p>
-      </React.Fragment>
+        <Router>
+            <div className="email">
+                <ToolBar />
+                <main>
+                    <Switch>
+                        <Route exact path="/waterMelon" component={ToDo} />
+                        <Route exact path="/inbox" component={TwoBars} />
+                        <Redirect from="/" to="/waterMelon"/>
+                    </Switch>
+                </main>
+            </div>
+        </Router>
     );
-  }
 }
-
-render(<App />, document.getElementById("root"));
