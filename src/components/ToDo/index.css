@@ -1,19 +1,27 @@
-.sidebar {
-    min-width: 100px;
+.move-enter {
+    opacity: 0.01;
+    transform: translate(-40px, 0);
+    color: white;
+    background-color: green;
 }
 
-.sidebar-left {
-    border-right: 1px solid #000;
-    margin-right: 10px;
+.move-enter-active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all 500ms ease-in;
 }
 
-.folder-menu-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.move-exit {
+    opacity: 1;
+    transform: translate(0, 0);
+	color: white;
+    background-color: red;
 }
 
-.folder-menu-list-item {
-    padding: 10px;
-    border-bottom: 1px solid #000;
+.move-exit-active {
+    opacity: 0.01;
+    transform: translate(40px, 0);
+    transition: all 500ms ease-in;
+    color: white;
+    background-color: darkred;
 }
