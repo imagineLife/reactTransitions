@@ -2,14 +2,14 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './index.css';
 
-export function ToolBar(props) {
+export function NavBar(props) {
 
     const links = props.links.map(l =>
-        <li key={l.text} className="navLinkLi">
-            <Link className="link" to={`${l.url}`}>
+        <Link key={l.text} className="link" to={`${l.url}`}>
+            <li className="navLinkLi">
                 {l.text}
-            </Link>
-        </li>
+            </li>
+        </Link>
     );
 
     return (
@@ -21,4 +21,4 @@ export function ToolBar(props) {
     );
 }
 
-export default ToolBar;
+export default NavBar;
