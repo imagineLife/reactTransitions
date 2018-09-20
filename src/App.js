@@ -5,23 +5,28 @@ import {
     Redirect,
     Switch
 } from 'react-router-dom';
-import ToDo from './Components/ToDo/';
-import TwoBars from './Components/TwoBars';
-import ToolBar from './Components/ToolBar';
-import SingleEmail from './Components/SingleEmail/single-email';
-import EmailList from './Components/EmailList/email-list';
+import ToDo from './components/ToDo/';
+import TwoBars from './components/TwoBars';
+import About from './components/About';
+import NavBar from './components/NavBar';
 import './main.css';
 
-export default function Email() {
+export default function RouteComponent() {
+    let navLinks = [
+        {text:'To Do', url:'/todo'},
+        {text:'Two Bars', url:'/twobars'},
+        {text:'About', url:'/about'}
+    ]
     return (
         <Router>
-            <div className="email">
-                <ToolBar />
+            <div className="routerWrapper">
+                <NavBar links={navLinks}/>
                 <main>
                     <Switch>
-                        <Route exact path="/waterMelon" component={ToDo} />
-                        <Route exact path="/inbox" component={TwoBars} />
-                        <Redirect from="/" to="/waterMelon"/>
+                        <Route exact path="/ToDo" component={ToDo} />
+                        <Route exact path="/twobars" component={TwoBars} />
+                        <Route exact path="/about" component={About} />
+                        <Redirect from="/" to="/todo"/>
                     </Switch>
                 </main>
             </div>
