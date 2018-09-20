@@ -1,6 +1,11 @@
 import React from 'react';
 import './index.css';
+import ItemsList from '../ItemsList'
 
 export default function ToDo() {
-    return ( <div>To Do App</div> );
+    return ( 
+    	<React.Fragment>
+    		<ItemsList />
+    	</React.Fragment>
+    );
 }
