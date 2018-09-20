@@ -40,6 +40,8 @@ module.exports = {
       }
     ]
   },
+
+  //for client-side react-router routing
   devServer:{
     historyApiFallback: true,
   },
