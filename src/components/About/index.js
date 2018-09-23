@@ -16,13 +16,16 @@ export default function About() {
 		    						<p>This is a variable, compile earlier in the render method of the ToDo 'container'. This ItemsList is made up of the CSSTransition component wrapping the Item Component:</p>
 		    						<ul>
 		    							<li>
-		    								<b>**CSSTransition</b>
+		    								<b>**CSSTransition**</b>
 		    								<p>This contains the <b>'classNames=move'</b> prop. Here, the cssTransition component automagically contains some 'hidden' classes for addins some css-transitions to new & leaving react components:</p>
 		    								<p>move-enter,</p>
 		    								<p>move-enter-active,</p>
 		    								<p>move-exit,</p>
 		    								<p>move-exit-active,</p>
 		    								<p>& more...</p>
+		    								<p><b>NOTE:</b> Once this CSSTransition is used, a class is appended to the class of each of its child element. <br />
+		    								The in-view class has the 'move-enter-done' class.<br />
+		    								While the element is in transition, the class changes, depending on its transition-state.</p>
 		    								<ul>
 		    									<li>Item</li>
 		    								</ul>
