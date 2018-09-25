@@ -26,7 +26,7 @@ export default class TwoBars extends React.Component {
 			{
 				x:'100',
 				name:'first',
-				togglingH: ['200','300']
+				togglingH: ['0','300']
 			},
 			{
 				x:'300',
@@ -36,11 +36,17 @@ export default class TwoBars extends React.Component {
 		]
 
 		let rects = dummyData.map(d => {
-			return <Rect 
-				key={d.name}
-				x={d.x}
-				h={this.state.toggled ? d.togglingH[0] : d.togglingH[1]}
-			/>
+			let thisHeight = this.state.toggled ? d.togglingH[0] : d.togglingH[1];
+			console.log('thisHeight')
+			console.log(thisHeight)
+			if(thisHeight > 0){
+				return <Rect 
+					key={d.name}
+					x={d.x}
+					h={this.state.toggled ? d.togglingH[0] : d.togglingH[1]}
+				/>	
+			}
+			
 		})
 
 		return (
