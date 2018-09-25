@@ -14,7 +14,7 @@ import './main.css';
 export default function RouteComponent() {
     let navLinks = [
         {text:'To Do', url:'/todo'},
-        {text:'Two Bars', url:'/twobars'},
+        {text:'Two Bars D3', url:'/twobars'},
         {text:'About', url:'/about'}
     ]
     return (
