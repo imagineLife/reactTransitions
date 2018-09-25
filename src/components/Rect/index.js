@@ -1,6 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3'
-
+import { Transition } from 'react-transition-group';
 import './index.css';
 
 export default class Rect extends React.Component{
@@ -15,13 +15,7 @@ export default class Rect extends React.Component{
 
   componentDidUpdate(prevProps, prevState){
     if(prevProps.h !== this.props.h){
-      console.log('bar did update!')
-      console.log('prevProps')
-      console.log(prevProps)
-      console.log('this.rectRef.current')
-      console.log(this.rectRef.current)
       let thisRect = d3.select(this.rectRef.current)
-      console.log(thisRect)
       thisRect.attr('x', prevProps.x)
       thisRect.attr('height', prevProps.h)
 
@@ -38,13 +32,14 @@ export default class Rect extends React.Component{
             h: this.props.h
           })
         );
-      console.log('- - - - - - - - - - -')
     }
   }
 
   render(){
     return(
-     <rect x={this.state.x} width='10' y='150' height={this.state.h} ref={this.rectRef}/>
+      <Transition timeout={150}>
+        <rect x={this.state.x} width='10' y='150' height={this.state.h} ref={this.rectRef}/>
+      </Transition>
     )
   }
 }
