@@ -26,7 +26,7 @@ export default class TwoBars extends React.Component {
 			{
 				x:'100',
 				name:'first',
-				togglingH: ['0','300']
+				togglingH: ['50','300']
 			},
 			{
 				x:'300',
